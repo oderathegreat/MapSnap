@@ -44,9 +44,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
+        //the two zeros symbolize the minimum time and distance required to get our location updates
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
+
+                //code to get the coordinates
+
+                //get latitude first
+                 double latitude = location.getLatitude();
+
+                 //get longitude
+                double longitude = location.getLongitude();
+
+
 
             }
 
