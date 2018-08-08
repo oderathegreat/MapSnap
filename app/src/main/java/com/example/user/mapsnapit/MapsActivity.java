@@ -2,6 +2,8 @@ package com.example.user.mapsnapit;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -15,6 +17,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -45,40 +50,83 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
 
-        //the two zeros symbolize the minimum time and distance required to get our location updates
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
 
-                //code to get the coordinates
+        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
 
-                //get latitude first
-                 double latitude = location.getLatitude();
+            //the two zeros symbolize the minimum time and distance required to get our location updates
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
 
-                 //get longitude
-                double longitude = location.getLongitude();
+                    //code to get the coordinates
+
+                    //get latitude first
+                    double latitude = location.getLatitude();
+                    //get longitude
+                    double longitude = location.getLongitude();
+
+                    //instatiate a new object
+
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    //instatiate Geocoder
+
+                    Geocoder geocoder = new Geocoder(getApplicationContext());
+                    try {
+                        List<Address> addressList = geocoder.getFromLocation(latitude, longitude , 1)
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+
+                @Override
+                public void onStatusChanged(String s, int i, Bundle bundle) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String s) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String s) {
+
+                }
+            });
+
+        }    else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+
+                }
+
+                @Override
+                public void onStatusChanged(String s, int i, Bundle bundle) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String s) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(String s) {
+
+                }
+            })
 
 
 
-            }
+        }
 
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
+        }
 
-            }
 
-            @Override
-            public void onProviderEnabled(String s) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-
-            }
-        });
-
-    }
 
 
     /**
