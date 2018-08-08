@@ -76,10 +76,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         String street = addressList.get(0).getLocality()+ ",";
                         street += addressList.get(0).getCountryName();
-
                         //get our current marker
-
                         mMap.addMarker(new MarkerOptions().position(latLng).title(street));
+                        //
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -109,6 +109,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
+
+
+                    //code to get the coordinates
+
+                    //get latitude first
+                    double latitude = location.getLatitude();
+                    //get longitude
+                    double longitude = location.getLongitude();
+
+                    //instatiate a new object
+
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    //instatiate Geocoder
+
+                    Geocoder geocoder = new Geocoder(getApplicationContext());
+                    try {
+                        List<Address> addressList = geocoder.getFromLocation(latitude, longitude , 1);
+
+                        String street = addressList.get(0).getLocality()+ ",";
+                        street += addressList.get(0).getCountryName();
+                        //get our current marker
+                        mMap.addMarker(new MarkerOptions().position(latLng).title(street));
+                        //
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 }
 
