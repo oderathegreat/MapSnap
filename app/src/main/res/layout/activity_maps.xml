@@ -74,5 +74,68 @@
         android:layout_height="wrap_content" />
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Size Of Land"
+            android:textStyle="bold"
+            android:layout_marginTop="390dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#30a5bf"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="150dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="240dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Crop to farm"
+        android:textStyle="bold"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="30dp"
+        android:textColor="#30a5bf"
+        android:layout_height="wrap_content" />
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="70dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="430dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"/>
+
+
+    <Button
+        android:layout_width="320dp"
+        android:background="#5d80e1"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:text="ENTER"
+        android:layout_marginTop="480dp"
+        android:textColor="#FFF"
+        android:layout_height="50dp" />
+
+
 </RelativeLayout>
 
