@@ -17,10 +17,18 @@
     tools:context=".MapsActivity" />
 
 
+    <ImageView
+        android:layout_width="40dp"
+        android:background="@drawable/profile"
+        android:layout_marginTop="40dp"
+        android:layout_height="40dp" />
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_margin="30dp"
         android:id="@+id/relSearch"
+        android:layout_marginLeft="50dp"
         android:elevation="10dp"
         android:background="#fff"
         android:layout_height="50dp">
