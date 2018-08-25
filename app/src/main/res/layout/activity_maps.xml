@@ -59,7 +59,19 @@
 
 
 
+
+
     </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Type Of Soil : Loam"
+       android:textStyle="bold"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="30dp"
+        android:textColor="#30a5bf"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>
