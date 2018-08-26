@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="20dp"
     tools:context=".Guideline">
 
-</LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Depth Of Hole"
+        android:background="#6c9bb7"
+        android:textColor="#ffffff"
+        android:padding="30dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="90dp"
+        android:text="Spacing"
+        android:background="#6c9bb7"
+        android:textColor="#ffffff"
+        android:padding="30dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="180dp"
+        android:text="Yield Expected"
+        android:background="#6c9bb7"
+        android:textColor="#ffffff"
+        android:padding="30dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="270dp"
+        android:text="Amount Of Seedling"
+        android:background="#6c9bb7"
+        android:textColor="#ffffff"
+        android:padding="30dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="360dp"
+        android:text="Cost Analysis"
+        android:background="#6c9bb7"
+        android:textColor="#ffffff"
+        android:padding="30dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="450dp"
+        android:text="Procedure"
+        android:background="#6c9bb7"
+        android:textColor="#ffffff"
+        android:padding="30dp"
+        android:textSize="14sp"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>
+
+
+
+
