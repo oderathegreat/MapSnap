@@ -42,7 +42,8 @@
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Guideline"></activity>
+        <activity android:name=".Guideline" />
+        <activity android:name=".Profile"></activity>
     </application>
 
 </manifest>
